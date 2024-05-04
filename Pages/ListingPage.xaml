@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ISIEvents.Pages.ListingPage"
+             >
+
+    <StackLayout Padding="20">
+        
+        <Entry x:Name="event_name"
+             Placeholder="Enter event name..."
+             VerticalOptions="CenterAndExpand"/>
+        
+        <Entry x:Name="description"
+             Placeholder="Enter description..."
+             VerticalOptions="CenterAndExpand"/>
+
+        <Picker x:Name="picker"
+        Title="Which category" ItemsSource="{Binding Cat}"/>
+
+
+        <Button Text="Select Photo"
+              Clicked="OnSelectPhotoButtonClicked"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="FillAndExpand"/>
+
+
+        <Image x:Name="SelectedPhotoImage"
+             Aspect="AspectFit"
+             HeightRequest="200"
+             IsVisible="False" />
+
+
+        <Button x:Name="UploadPhotoButton"
+              Text="Upload Photo"
+              Clicked="OnUploadPhotoButtonClicked"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="FillAndExpand"
+              IsEnabled="False" />
+
+    </StackLayout>
+</ContentPage>

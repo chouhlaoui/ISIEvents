@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ISIEvents.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ISIEvents"
+    xmlns:pages="clr-namespace:ISIEvents.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:SignInPage}"
+        Route="SignInPage" 
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:SignUpPage}"
+        Route="SignUpPage" 
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate pages:MainPage}"
+            Route="MainPage" 
+/>
+
+        <ShellContent
+            Title="Add Event"
+                      Icon="event.png"
+            ContentTemplate="{DataTemplate pages:ListingPage}"
+            Route="ListingPage"             
+/>
+        
+        <ShellContent
+          Title="Add Category"
+                        Icon="tag.png"
+
+          ContentTemplate="{DataTemplate pages:CategoryAdd}"
+          Route="CategoryAdd" 
+/>
+        
+        <ShellContent
+          Title="Students"
+                        Icon="student.png"
+
+          ContentTemplate="{DataTemplate pages:StudentList}"
+          Route="StudentList" 
+/>
+        
+        <ShellContent
+            Title="Profile"
+                        Icon="profile.png"
+
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Route="ProfilePage"
+/>
+    </TabBar>
+
+</Shell>

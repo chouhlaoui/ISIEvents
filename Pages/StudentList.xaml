@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ISIEvents.Pages.StudentList"
+             >
+    <Grid x:Name="ListeUsers" VerticalOptions="FillAndExpand">
+            <ListView Grid.Row="1" x:Name="userListView" ItemsSource="{Binding students}" IsPullToRefreshEnabled="True" VerticalOptions="FillAndExpand">
+            <ListView.Header>
+                <Grid  HeightRequest="50" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" TextColor="Black" Text="Name" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+                    <Label Grid.Column="1" TextColor="Black" Text="Subscriptions" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding Email}" />
+                                                </StackLayout>
+                      
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
